@@ -1,0 +1,13 @@
+cppclean: cppclean (Find problems in C++ source)
+cppclean:
+cppclean: cppclean attempts to find problems in C++ source that slow
+cppclean: development in large code bases, for example various forms of
+cppclean: unused code. Unused code can be unused functions, methods, data
+cppclean: members, types, etc to unnecessary #include directives. Unecessary
+cppclean: #includes can cause considerable extra compiles increasing
+cppclean: the edit-compile-run cycle.
+cppclean: This is a fork of the original cppclean project. The original
+cppclean: project home page, which no longer contains code, is at
+cppclean: https://code.google.com/p/cppclean/.
+cppclean:
+cppclean: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>

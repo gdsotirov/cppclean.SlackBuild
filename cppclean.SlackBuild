@@ -53,9 +53,15 @@ tar --extract --verbose --file=$CWD/${NAME}-${VERSION}.tar.gz || exit 3
 cd $SRC
 fix_source
 
-# Build & install
-python setup.py build || exit 4
-python setup.py install --root=${PKG} || exit 5
+# Apply patch
+if [ -e $CWD/${NAME}-${VERSION}.diff ]; then
+  patch --backup --strip=1 --suffix=.orig < $CWD/${NAME}-${VERSION}.diff || exit 4
+fi
+
+# Build, test & install
+python3 setup.py build || exit 5
+bash test.bash || exit 6
+python3 setup.py install --root=${PKG} || exit 7
 
 # Prepare
 bin_perms $PKG
@@ -75,11 +81,15 @@ install --mode 644 --preserve-timestamps \
 SBDIR=$PKG/usr/src/slackbuilds/${NAME}-${VERSION}
 install --mode 755 --directory ${SBDIR}
 install --mode 644 --preserve-timestamps \
-        $CWD/slack-desc         ${SBDIR}/slack-desc
+        $CWD/slack-desc              ${SBDIR}/slack-desc
 install --mode 644 --preserve-timestamps \
-        $CWD/slack-required     ${SBDIR}/slack-required
+        $CWD/slack-required          ${SBDIR}/slack-required
+if [ -e $CWD/${NAME}-${VERSION}.diff ]; then
 install --mode 644 --preserve-timestamps \
-        $CWD/${NAME}.SlackBuild ${SBDIR}/${NAME}.SlackBuild
+        $CWD/${NAME}-${VERSION}.diff $SBDIR/${NAME}-${VERSION}.diff
+fi
+install --mode 644 --preserve-timestamps \
+        $CWD/${NAME}.SlackBuild      ${SBDIR}/${NAME}.SlackBuild
 
 # Pack
 cd $PKG

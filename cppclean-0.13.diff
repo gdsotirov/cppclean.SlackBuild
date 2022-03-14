@@ -1,0 +1,55 @@
+# Use Python3
+diff -urNad cppclean-0.13-orig/cppclean cppclean-0.13/cppclean
+--- cppclean-0.13-orig/cppclean	2019-07-30 15:18:50.000000000 +0300
++++ cppclean-0.13/cppclean	2022-03-14 20:14:55.697039071 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ #
+ # Copyright 2007 Neal Norwitz
+ # Portions Copyright 2007 Google Inc.
+diff -urNad cppclean-0.13-orig/setup.py cppclean-0.13/setup.py
+--- cppclean-0.13-orig/setup.py	2019-07-30 15:18:50.000000000 +0300
++++ cppclean-0.13/setup.py	2022-03-14 20:15:01.651989459 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ """Setup for cppclean."""
+ 
+diff -urNad cppclean-0.13-orig/test_ast.py cppclean-0.13/test_ast.py
+--- cppclean-0.13-orig/test_ast.py	2019-07-30 15:18:50.000000000 +0300
++++ cppclean-0.13/test_ast.py	2022-03-14 20:15:16.011869825 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ #
+ # Copyright 2008 Neal Norwitz
+ # Portions Copyright 2008 Google Inc.
+diff -urNad cppclean-0.13-orig/test_find_warnings.py cppclean-0.13/test_find_warnings.py
+--- cppclean-0.13-orig/test_find_warnings.py	2019-07-30 15:18:50.000000000 +0300
++++ cppclean-0.13/test_find_warnings.py	2022-03-14 20:15:24.334800484 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ 
+ """Tests for find_warnings module."""
+ 
+diff -urNad cppclean-0.13-orig/test_symbols.py cppclean-0.13/test_symbols.py
+--- cppclean-0.13-orig/test_symbols.py	2019-07-30 15:18:50.000000000 +0300
++++ cppclean-0.13/test_symbols.py	2022-03-14 20:15:51.124577270 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ #
+ # Copyright 2007 Neal Norwitz
+ # Portions Copyright 2007 Google Inc.
+diff -urNad cppclean-0.13-orig/test_tokenize.py cppclean-0.13/test_tokenize.py
+--- cppclean-0.13-orig/test_tokenize.py	2019-07-30 15:18:50.000000000 +0300
++++ cppclean-0.13/test_tokenize.py	2022-03-14 20:16:00.232501379 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ #
+ # Copyright 2007 Neal Norwitz
+ # Portions Copyright 2007 Google Inc.

@@ -23,7 +23,7 @@
 . ../../slack-package.conf
 
 NAME=cppclean
-VERSION=0.12
+VERSION=0.13
 ARCH=${ARCH:-i586}
 BUILD=${BUILD:-1}
 
